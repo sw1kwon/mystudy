@@ -1,0 +1,667 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "661594e8-a790-442e-a5c9-dc8b2b9005b9",
+   "metadata": {},
+   "source": [
+    "# HW: 0315"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9eb19589-6055-4d6a-86de-4ad5e9aa435d",
+   "metadata": {},
+   "source": [
+    "# 통계학과 201816897 권순원"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d4f0902b-4f39-4af9-a747-cd8043a4097a",
+   "metadata": {
+    "id": "d4f0902b-4f39-4af9-a747-cd8043a4097a"
+   },
+   "source": [
+    "아래와 같은 문자열이 있다고 하자. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "97d226d3-afa2-43fe-8b26-1245e01b2ddf",
+   "metadata": {
+    "id": "97d226d3-afa2-43fe-8b26-1245e01b2ddf"
+   },
+   "outputs": [],
+   "source": [
+    "a='Jeonbuk National University' "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f7b55542-65c6-47d5-ac93-6e6353005811",
+   "metadata": {
+    "id": "f7b55542-65c6-47d5-ac93-6e6353005811"
+   },
+   "source": [
+    "`1`. 적당한 인덱싱을 통하여 출력결과가 아래와 같도록 하라."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "b75af562-5b0e-488f-98a1-616405552ec0",
+   "metadata": {
+    "id": "b75af562-5b0e-488f-98a1-616405552ec0",
+    "outputId": "a7634f4c-f0c6-40d4-e5df-203e3a7c3b48"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'University'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[-10:]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "71916e1e-1dfc-43bc-982d-c601219c1f3c",
+   "metadata": {
+    "id": "71916e1e-1dfc-43bc-982d-c601219c1f3c"
+   },
+   "source": [
+    "**hint**: University는 10글자이다. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "27975863-84cf-4987-aeca-fb5915a48119",
+   "metadata": {},
+   "source": [
+    "**설명** \\\n",
+    "Python에서는 인덱싱을 할때 첫번째 원소가 0, 마지막 원소가 -1이다. \\\n",
+    "따라서 문자열의 마지막 부분인 University에서 y가 -1에 해당하고, \\\n",
+    "University는 10글자이므로 U가 -10에 해당한다. \\\n",
+    "하지만 Python에서 [-10:-1]과 같이 입력할 경우, 오른쪽의 -1은 포함되지 않고 \\\n",
+    "-10에서 -2에 해당하는 원소만 출력된다. \\\n",
+    "그러므로 오른쪽의 숫자를 생략해서 -10에서 끝까지 출력되도록 하면 된다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "42b4b8ca-5fea-4f08-ba2b-fb6179ca0ab5",
+   "metadata": {
+    "id": "42b4b8ca-5fea-4f08-ba2b-fb6179ca0ab5"
+   },
+   "source": [
+    "`2`. 출력결과가 아래와 같도록 하는 코드를 작성하라. (lower 함수를 이용할 것)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "753bcd16-e62a-4c10-a4dc-4ff14a2d17b7",
+   "metadata": {
+    "id": "753bcd16-e62a-4c10-a4dc-4ff14a2d17b7",
+    "outputId": "27f7b5f9-77bb-402d-c9fb-6b437910ead0"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'jeonbuk national university'"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a.lower()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1aebda31-22a8-4b61-b5a7-0102ce3c704e",
+   "metadata": {},
+   "source": [
+    "**설명** \\\n",
+    "a.lower()를 쓰면 a의 모든 문자를 소문자로 바꾸어 준다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c0413cfb-05e3-4dd8-855e-ad5996f7bed4",
+   "metadata": {
+    "id": "c0413cfb-05e3-4dd8-855e-ad5996f7bed4"
+   },
+   "source": [
+    "`3`. 아래의 코드를 관찰하고 isupper()의 기능이 무엇인지 스스로 정리해보라. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "82567453-19a2-49d9-a8bc-22492ba55d4a",
+   "metadata": {
+    "id": "82567453-19a2-49d9-a8bc-22492ba55d4a",
+    "outputId": "8325e7eb-25ae-4b03-af62-c359f63a710e"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 229,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'A'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "97216c74-fde6-4976-ab98-524787e39120",
+   "metadata": {
+    "id": "97216c74-fde6-4976-ab98-524787e39120",
+    "outputId": "6871a3d0-8b3b-4898-85d9-04684c0cf510"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 230,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'AA'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "dda2089e-220e-4b0c-90fb-392fafe9da8f",
+   "metadata": {
+    "id": "dda2089e-220e-4b0c-90fb-392fafe9da8f",
+    "outputId": "673bca39-4bb8-42a4-e857-fd2bf5ba2ec8"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 231,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'Aa'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d35cba09-1b59-46b7-a18e-6e3b15b2bc5f",
+   "metadata": {
+    "id": "d35cba09-1b59-46b7-a18e-6e3b15b2bc5f",
+    "outputId": "446dda09-babf-4f0f-ea86-19edd646e5f9"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 232,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'aa'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "83e1a853-0d6b-48e0-9e38-28d93cdb7011",
+   "metadata": {
+    "id": "83e1a853-0d6b-48e0-9e38-28d93cdb7011",
+    "outputId": "5ed5815a-2056-49b6-f1f6-a8231c569131"
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 233,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'aA'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ecc99035-1a1d-4f59-b38d-14020180ff5b",
+   "metadata": {},
+   "source": [
+    "**유추** \\\n",
+    " .isupper()는 앞에 있는 문자열이 전부 대문자일때만 True를 출력하는 것 같다.\\\n",
+    " 하지만 위의 코드에서는 전부 알파벳만 있어서, 특수 문자 등이 섞이면 어떻게 되는지는 모르겠다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "f20e24f2-d69d-4288-a984-b93377bf3a8c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'A-'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "e74a1ff4-a548-46f8-9a21-6dd6040a55e2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'A##'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "3eaac057-150b-431f-922f-d416bb615179",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'A-a'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "466b5c13-0f91-447e-a42d-24ebb4650d52",
+   "metadata": {},
+   "source": [
+    "특수문자가 있더라도 알파벳이 전부 대문자라면 True를 출력하는 것 같다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d06a873a-cefd-4151-b688-36e11e27c21b",
+   "metadata": {
+    "id": "d06a873a-cefd-4151-b688-36e11e27c21b"
+   },
+   "source": [
+    "유추한 기능이 맞는지 ChatGPT를 통하여 확인하라. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "840bba9f-0f97-4db9-abbf-c7e351c4d59b",
+   "metadata": {},
+   "source": [
+    "Q : In python, what does isupper() mean?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b5181919-c13e-4358-a18a-249e81e117d9",
+   "metadata": {},
+   "source": [
+    "ChatGPT : \\\n",
+    "In Python, isupper() is a built-in string method that returns a Boolean value indicating whether all the alphabetic characters in a string are uppercase or not."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f27df19e-0d2d-4958-b163-233262ad9894",
+   "metadata": {},
+   "source": [
+    "For example, consider the following code: \\\n",
+    "\\\n",
+    "string1 = \"HELLO WORLD\" \\\n",
+    "string2 = \"Hello World\" \\\n",
+    "\\\n",
+    "print(string1.isupper()) # Output: True \\\n",
+    "print(string2.isupper()) # Output: False \\\n",
+    "\\\n",
+    "유추한 내용이 맞는 것 같다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0ea975d7-e994-419f-9219-b5b44ff523e7",
+   "metadata": {},
+   "source": [
+    "In the above example, the isupper() method returns True for string1 \\\n",
+    "because all of its alphabetic characters are in uppercase. \\\n",
+    "However, it returns False for string2 \\\n",
+    "because it contains lowercase alphabetic characters.\\\n",
+    "\\\n",
+    "Note that the isupper() method returns True \\\n",
+    "if the string has no alphabetic characters or \\\n",
+    "if all of its alphabetic characters are in uppercase."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36a793cd-8022-42fe-a7cd-8db9615d6dda",
+   "metadata": {},
+   "source": [
+    "밑에서 두번째 문장은 코드를 돌려서 확인해봐야겠다. \\\n",
+    "Note that the isupper() method returns True \\\n",
+    "if the string has no alphabetic characters"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "9cadc221-ff43-4207-9927-f9c43e9a7bc1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'##'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "d8e2feda-d494-4fc4-a064-13f3c612e963",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'가나'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dc5124d1-47de-4b2c-a022-34dc8567d71e",
+   "metadata": {},
+   "source": [
+    "ChatGPT는 string에 알파벳이 없는 경우 True를 출력한다고 하였다. \\\n",
+    "하지만 코드를 돌려보니 실제로는 False를 출력하였다. \\"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "d770bc11-be3e-41dc-b546-73ae576d20a1",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'AA가나'.isupper()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ffb0b1cf-d236-411a-8899-b4178610855f",
+   "metadata": {},
+   "source": [
+    "정리하면, string에 알파벳이 전부 대문자인 경우는 특수문자나 한글 등이 함께 있어도 \\\n",
+    "isupper()는 True를 출력한다. \\\n",
+    "하지만, string에 알파벳 대문자뿐만 아니라 소문자도 같이 있는 경우 또는 \\\n",
+    "특수문자나 한글 등만 있는 경우는 False를 출력한다."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e97f116-4785-4077-8f32-4d6c8c7d9b4c",
+   "metadata": {
+    "id": "0e97f116-4785-4077-8f32-4d6c8c7d9b4c"
+   },
+   "source": [
+    "`4`. 다음중 실행 불가능한 코드를 모두 골라라.  "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ee42d091-62ad-45c1-b937-dd94f92f39b2",
+   "metadata": {
+    "id": "ee42d091-62ad-45c1-b937-dd94f92f39b2"
+   },
+   "source": [
+    "```Python\n",
+    "(a) 'a'*2 \n",
+    "\n",
+    "(b) 'a'*'2'\n",
+    "\n",
+    "(c) 'a'+2 \n",
+    "\n",
+    "(d) 'a'+'2'\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e682331b-1d03-44b8-890a-935b8dcef99e",
+   "metadata": {},
+   "source": [
+    "(a) \\\n",
+    "str과 0보다 큰 int의 곱하기 연산은 가능하다. \\\n",
+    "결과는 'aa'이다. \\\n",
+    "또 'a'*2 는 'a'+'a'와 같다고도 볼 수 있다.\n",
+    "\n",
+    "**(b)** \\\n",
+    "str끼리의 곱하기 연산은 의미상 맞지 않아 실행되지 않는다.\n",
+    "\n",
+    "**(c)** \\\n",
+    "str과 int는 더할 수 없다. \\\n",
+    "\n",
+    "(d) \\\n",
+    "'a'와'2'를 더하면 'a2'가 된다."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "7aedd38c-617f-4241-9438-88c83bd05dd5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'aa'"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#(a)\n",
+    "'a'*2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "d98aedbe-d738-4ed8-9427-e02faddfbba7",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "can't multiply sequence by non-int of type 'str'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[20], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;66;03m#(b)\u001b[39;00m\n\u001b[1;32m----> 2\u001b[0m \u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43ma\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43m2\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\n",
+      "\u001b[1;31mTypeError\u001b[0m: can't multiply sequence by non-int of type 'str'"
+     ]
+    }
+   ],
+   "source": [
+    "#(b)\n",
+    "'a'*'2'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "d294803f-0d52-4601-b2ef-4efa8ce094a4",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "can only concatenate str (not \"int\") to str",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[21], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;66;03m#(c)\u001b[39;00m\n\u001b[1;32m----> 2\u001b[0m \u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43ma\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;241;43m+\u001b[39;49m\u001b[38;5;241;43m2\u001b[39;49m\n",
+      "\u001b[1;31mTypeError\u001b[0m: can only concatenate str (not \"int\") to str"
+     ]
+    }
+   ],
+   "source": [
+    "#(c)\n",
+    "'a'+2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "9b80d310-86fb-4892-9c4b-bc7d44c51c7a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'a2'"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#(d)\n",
+    "'a'+'2'"
+   ]
+  }
+ ],
+ "metadata": {
+  "colab": {
+   "provenance": []
+  },
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.16"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
